@@ -6,7 +6,7 @@ app = Flask(__name__, template_folder="templates")
 # Функція для отримання останнього запису з БД
 def get_last_record():
     connection = sqlite3.connect('generator.db')
-    cursor = connection.cursor()
+    cursor = connection.cursor() #helloo
     try:
         # Виконання -запиту
         cursor.execute("""
