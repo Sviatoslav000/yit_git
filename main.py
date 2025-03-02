@@ -50,12 +50,12 @@ def api_last_record():
     last_record = get_last_record()  # Отримує останній запис
     if last_record:
         record = {
-            "temperature": last_record[0],
-            "fuel_usage": last_record[1],
-            "fuel_level": last_record[2],
-            "emission": last_record[3],
-            "timestamp": last_record[4],
-            "generator_name": last_record[5],
+            "temperature": last_record[0], # Температура
+            "fuel_usage": last_record[3], # Використання палива
+            "fuel_level": last_record[2],  # Рівень палива
+            "emission": last_record[3],  # Викиди
+            "timestamp": last_record[4],  # Дата - час
+            "generator_name": last_record[5],  # Назва гененератора
         }
         return jsonify(record), 200
     else:
