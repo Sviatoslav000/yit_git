@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Події</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #1d3557;
+            --secondary-color: #457b9d;
+            --accent-color: #a8dadc;
+            --text-color: #f1faee;
+        }
+
+        body {
+            margin: 0;
+            font-family: 'Roboto', sans-serif;
+            background-color: var(--primary-color);
+            color: var(--text-color);
+        }
+
+        /* Навбар */
+        .navbar {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background-color: var(--primary-color);
+            padding: 10px 20px;
+        }
+
+        .navbar-logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: var(--accent-color);
+            text-decoration: none;
+        }
+
+        .navbar-links {
+            display: flex;
+            gap: 20px;
+        }
+
+        .navbar-links a {
+            color: var(--text-color);
+            text-decoration: none;
+            font-size: 1.1rem;
+            font-weight: 500;
+        }
+
+        .navbar-links a:hover {
+            text-decoration: underline;
+        }
+
+        .navbar-timestamp {
+            font-size: 1rem;
+            color: var(--accent-color);
+        }
+
+        /* Центрування сторінки */
+        .container {
+            margin: 0 auto;
+            max-width: 1400px;
+            padding: 20px;
+        }
+
+        h1 {
+            color: var(--accent-color);
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .event-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .event-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: var(--secondary-color);
+            border-radius: 10px;
+            padding: 15px;
+            margin-bottom: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+        }
+
+        .event-item span {
+            font-size: 1rem;
+        }
+
+        .event-item .icon {
+            margin-right: 10px;
+        }
+
+        .critical {
+            color: var(--warning-color);
+        }
+
+        .warning {
+            color: var(--alert-color);
+        }
+
+        .timestamp {
+            font-size: 0.9rem;
+            color: var(--text-color);
+        }
+    </style>
+</head>
+<body>
+    <!-- Навбар -->
+    <nav class="navbar">
+        <!-- Лого -->
+        <a href="#" class="navbar-logo">EcoPower</a>
+        <!-- Лінки -->
+        <div class="navbar-links">
+            <a href="/">Головна</a>
+            <a href="/events">Події</a>
+        </div>
+        <!-- Таймстамп -->
+        <div class="navbar-timestamp" id="timestamp"></div>
+    </nav>
+
+    <div class="container">
+        <h1>Події</h1>
+        <ul class="list-group mt-3" id="eventList">
+            <!-- Динамічні події з'являться тут -->
+        </ul>
+    </div>
+
+    <script src="{{url_for('static', filename='time.js')}}"></script>
+    <script src="{{url_for('static', filename='simulating.js')}}"></script>
+</body>
+</html>
