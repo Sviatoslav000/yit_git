@@ -22,7 +22,7 @@ jobs:
 
       - name: Build EXE with PyInstaller
         run: |
-          pyinstaller -F -i "exeicon.ico" --add-data "templates=templates" --add-data "static=static" --add-data "generator.db=generator.db" main.py
+          pyinstaller -F -i "exeicon.ico" --add-data=templates:templates --add-data=static:static --add-data=generator.db:generator.db main.py
 
       - name: Upload EXE artifact
         uses: actions/upload-artifact@v4
