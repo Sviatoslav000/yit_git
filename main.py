@@ -2,7 +2,7 @@ import sqlite3
 from flask import Flask, render_template, jsonify
 
 app = Flask(__name__, template_folder="templates")
-print("The site is up and running")
+print("The site is up and runninggg")
 # Функція для отримання останнього запису з БД
 def get_last_record():
     connection = sqlite3.connect('generator.db')
