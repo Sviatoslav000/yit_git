@@ -49,8 +49,8 @@ def events():
 def api_last_record():
     last_record = get_last_record()  # Отримує останній запис
     if last_record:
-        '''if None in last_record:  # Якщо є хоча б одне значення None, це означає, що дані неповні
-            return jsonify({"error": "Incomplete data received"}), 400'''
+        if None in last_record:  # Якщо є хоча б одне значення None, це означає, що дані неповні
+            return jsonify({"error": "Incomplete data received"}), 400
 
         record = {
             "temperature": last_record[0], # Температура
